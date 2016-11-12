@@ -13,6 +13,11 @@ return [
     | to have a conventional place to find your various credentials.
     |
     */
+    'facebook' => [
+    'client_id' => '554768114722450',
+    'client_secret' => '931cd88716e4b9f8e8908442d6f0015e',
+    'redirect' => 'http://localhost:8000/callback',
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
