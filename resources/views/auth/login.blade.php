@@ -62,13 +62,13 @@
                     </form>
                     <div class="row">
                         <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/google' }}" class="btn btn-lg waves-effect waves-light btn-block btn-success">Google+</a>
+                            <a href="{{ 'auth/google' }}" class="btn btn-lg waves-effect waves-light btn-block btn-danger"><img width="30px" height="30px" src="icon/google.png" class="pull-left">Google+</a>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/facebook' }}" class="btn btn-lg waves-effect waves-light btn-block btn-success">Facebook</a>
+                            <a href="{{ 'auth/facebook' }}" class="btn btn-lg waves-effect waves-light btn-block btn-primary"><img width="30px" height="30px" src="icon/fb.png" class="pull-left"> Facebook</a>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/twitter' }}" class="btn btn-lg waves-effect waves-light btn-block btn-success">twitter</a>
+                            <a href="{{ 'auth/twitter' }}" class="btn btn-lg waves-effect waves-light btn-block btn-info"><img width="30px" height="30px" src="icon/twitter.png " class="pull-left">twitter</a>
                         </div>
                     </div>
                 </div>
