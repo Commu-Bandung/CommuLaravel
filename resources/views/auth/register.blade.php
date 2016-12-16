@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/register.css" rel="stylesheet">
+
+    <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -67,15 +70,15 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="text-center center-block">
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/google' }}" class="btn btn-lg waves-effect waves-light btn-block btn-danger"><img width="30px" height="30px" src="icon/google.png" class="pull-left">Google+</a>
+                                <a href="{{ 'auth/google' }}" class="btn"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/facebook' }}" class="btn btn-lg waves-effect waves-light btn-block btn-primary"><img width="30px" height="30px" src="icon/fb.png" class="pull-left"> Facebook</a>
+                                <a href="{{ 'auth/facebook' }}" class="btn"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/twitter' }}" class="btn btn-lg waves-effect waves-light btn-block btn-info"><img width="30px" height="30px" src="icon/twitter.png " class="pull-left">twitter</a>
+                                <a href="{{ 'auth/twitter' }}" class="btn"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                             </div>
                         </div>
                     </form>

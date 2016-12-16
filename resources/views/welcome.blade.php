@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CommuId</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -63,6 +63,7 @@
                 margin-bottom: 30px;
             }
         </style>
+        <link href="css/hal-umum.css" rel="stylesheet">
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -79,16 +80,53 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                CoomuId
+                </div>
+                <div class="accordian">
+                    <ul>
+                        <li>
+                            <div class="image_title">
+                                <a href="#">KungFu Panda</a>
+                            </div>
+                            <a href="#">
+                                <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="image_title">
+                                <a href="#">Toy Story 2</a>
+                            </div>
+                            <a href="#">
+                                <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="image_title">
+                                <a href="#">Wall-E</a>
+                            </div>
+                            <a href="#">
+                                <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="image_title">
+                                <a href="#">Up</a>
+                            </div>
+                            <a href="#">
+                                <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg"/>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="image_title">
+                                <a href="#">Cars 2</a>
+                            </div>
+                            <a href="#">
+                                <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg"/>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
             </div>
         </div>
     </body>
