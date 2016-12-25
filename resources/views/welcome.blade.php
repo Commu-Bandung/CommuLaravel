@@ -133,18 +133,9 @@
     </head>
     <body>
 
-    
-
       <div class="container">
   <!-- Topper w/ logo -->
-  <div class="row hidden-xs topper">
-    <div class="col-xs-7 col-sm-7">
-      <a href="//convertify.io"><img am-TopLogo alt="SECUREVIEW"  src="http://blog.convertify.io/assets/images/logo--hero.png" class="img-responsive"></a>
-    </div>
-    <div class="col-xs-5 col-xs-offset-1 col-sm-5 col-sm-offset-0 text-right ">
-      <p am-CallNow>1 (888) CALL - NOW</p>
-    </div>
-  </div> <!-- End Topper -->
+  
   <!-- Navigation -->
   <div class="row">
     <nav class="navbar navbar-inverse" role="navigation">
@@ -164,10 +155,8 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="#">Home</a></li>
-            <li class="active"><a href="#">Markets</a></li>
-            <li><a href="#">Buy</a></li>
-            <li><a href="#">svStrike</a></li>
-            <li><a href="#">Training</a></li>
+            <li><a href="#">Pengajuan</a></li>
+            <li><a href="#">View Review</a></li>
             <li><a href="#">Contact Us</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
             <li class="visible-xs-block"><a href="#">Careers</a></li>
