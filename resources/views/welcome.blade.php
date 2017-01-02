@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">      
 
         {{-- <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
@@ -20,20 +20,6 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
             }
 
             .top-right {
@@ -148,7 +134,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand visible-xs-inline-block nav-logo" href="/"><img src="/images/logo-dark-inset.png" class="img-responsive" alt=""></a>
+          <a class="navbar-brand visible-xs-inline-block nav-logo" href="/"><img src="" class="img-responsive" alt=""></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -156,18 +142,17 @@
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="#">Home</a></li>
             <li><a href="#">Pengajuan</a></li>
-            <li><a href="#">View Review</a></li>
-            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
             <li class="visible-xs-block"><a href="#">Careers</a></li>
             <li class="visible-xs-block"><a href="#">Press Release</a></li>
             <li class="visible-xs-block"><a href="#">Support</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Company <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil proposal <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Press Release</a></li>
+                <li><a href="#">View Review</a></li>
+                <li><a href="#">Terima Bantuan</a></li>
+                <li><a href="#">Kerjasama</a></li>
               </ul>
             </li>
           </ul>
@@ -184,27 +169,10 @@
 
 </script>
 
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+      <div class="container">
+        <h1>@yield('title') </h1>
+        @yield('content')
+      </div>     
 
-            <div class="content">
-                <div class="title m-b-md">
-                    CommuId
-                </div>
-
-                <div class="links">
-
-                </div>
-            </div>
-        </div>
     </body>
 </html>
