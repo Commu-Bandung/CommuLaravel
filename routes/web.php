@@ -26,3 +26,15 @@ Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCa
 Route::get('pengajuan', function() {
     return view('pengajuan');
 });
+
+Route::get('view', function() {
+    return view('viewreview');
+});
+
+Route::get('bantuan', function() {
+    return view('bantuan');
+});
+
+Route::get('kerjasama', function() {
+    return view('kerjasama');
+});

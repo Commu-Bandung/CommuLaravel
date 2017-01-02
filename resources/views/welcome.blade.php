@@ -141,7 +141,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Pengajuan</a></li>
+            <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
             <li><a href="#">About</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
             <li class="visible-xs-block"><a href="#">Careers</a></li>
@@ -150,9 +150,9 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hasil proposal <b class="caret"></b></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">View Review</a></li>
-                <li><a href="#">Terima Bantuan</a></li>
-                <li><a href="#">Kerjasama</a></li>
+                <li><a href="{{ url('/view') }}">View Review</a></li>
+                <li><a href="{{ url('/bantuan') }}">Terima Bantuan</a></li>
+                <li><a href="{{ url('/kerjasama') }}">Kerjasama</a></li>
               </ul>
             </li>
           </ul>
@@ -170,7 +170,7 @@
 </script>
 
       <div class="container">
-        <h1>@yield('title') </h1>
+        <h1><mark><em> @yield('title') </em> </mark> </h1>
         @yield('content')
       </div>     
 
