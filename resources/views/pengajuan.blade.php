@@ -37,7 +37,9 @@
                             <i class="fa fa-gear">
                             </i>
                         </div>
-                        {!! Form::select('kategori', ['M' => 'Music', 'T' => 'Teknologi', 'L' => 'Lain-lain' ], null, ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori']) !!}
+                        {!! Form::select('kategori', ['teknologi' => 'Teknologi','manajemen' => 'Manajemen','language and culture' => 'language and culture',
+                                                        'music' => 'Music','fashion & beuty' => 'fashion & beuty', 'lain lain' => 'Lain-lain' ], null,
+                                                     ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori']) !!}
                     </div>
                 </div>
             </div>
