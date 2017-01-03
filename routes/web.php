@@ -38,3 +38,7 @@ Route::get('bantuan', function() {
 Route::get('kerjasama', function() {
     return view('kerjasama');
 });
+
+Route::get('profil', function() {
+    return view('profile');
+});

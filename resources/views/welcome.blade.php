@@ -11,6 +11,7 @@
         {{-- <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
         <!-- Styles -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <style type="text/css">
          @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
             html, body {
@@ -142,6 +143,7 @@
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="#">Home</a></li>
             <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
+            <li><a href="{{ url('/profil') }}">Profil</a></li>
             <li><a href="#">About</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
             <li class="visible-xs-block"><a href="#">Careers</a></li>

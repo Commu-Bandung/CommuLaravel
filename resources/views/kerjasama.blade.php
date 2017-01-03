@@ -10,8 +10,7 @@
         <td>email</td>
         <td>kampus</td>        
         <td>produk</td>    
-        <td>jumlah</td>                    
-        <td>produk</td>                             
+        <td>jumlah</td>                             
         <td>proposal</td>                
         <td>event</td>                
     </tr>

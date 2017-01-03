@@ -8,19 +8,37 @@
             <div class="form-group">
                 {!! Form::label('proposal','Proposal:',['class' => 'col-sm-2 controll-label']) !!}
                 <div class="col-sm-2">
-                {!! Form::text('proposal','',['class'   => 'form-controll input-sm','placeholder' => 'isi proposal']) !!}
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-file-word-o">
+                            </i>
+                        </div>
+                        {!! Form::text('proposal','',['class'   => 'form-controll input-sm','placeholder' => 'isi proposal']) !!}
+                    </div>
                 </div>
             </div>
             <div class="form-group">
                 {!! Form::label('event','Event:',['class' => 'col-sm-2 controll-label']) !!}
                 <div class="col-sm-2">
-                {!! Form::text('event','',['class'   => 'form-controll input-sm','placeholder' => 'isi event']) !!}
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar">
+                            </i>
+                        </div>
+                            {!! Form::text('event','',['class'   => 'form-controll input-sm','placeholder' => 'isi event']) !!}
+                        </div>
                 </div>
             </div>
             <div class="form-group">
                 {!! Form::label('kategori','Kategori:',['class' => 'col-sm-2 controll-label']) !!}
                 <div class="col-sm-2">
-                {!! Form::select('kategori', ['M' => 'Music', 'T' => 'Teknologi', 'L' => 'Lain-lain' ], null, ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori']) !!}
+                    <div class="input-group">
+                        <div class="input-group-addon">
+                            <i class="fa fa-gear">
+                            </i>
+                        </div>
+                        {!! Form::select('kategori', ['M' => 'Music', 'T' => 'Teknologi', 'L' => 'Lain-lain' ], null, ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori']) !!}
+                    </div>
                 </div>
             </div>
             <div class="form-group">
