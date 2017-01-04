@@ -35,7 +35,7 @@ class AuthController extends Controller
         $res = json_decode($body);
 
          try {
-                if(($res->login) == 'true')
+                if(($res->login) == true)
                 {
                     return redirect()->route('home')
                                     ->with('success','login success');
