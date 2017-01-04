@@ -44,3 +44,4 @@ Route::get('profil', function() {
 });
 
 Route::post('login','AuthController@login');
+Route::get('logout','AuthController@logout');

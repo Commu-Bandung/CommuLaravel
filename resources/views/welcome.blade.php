@@ -113,6 +113,18 @@
               text-shadow: 0 -1px 0 rgba(31, 31, 31, 0.29);
               -webkit-font-smoothing: antialiased;
             }
+            .btn.btn-gradient-red {
+              background-color: #c4091c !important;
+              background-image: -webkit-linear-gradient(top, #841722 0%, #7c0d18 100%);
+              background-image: -o-linear-gradient(top, #ba2130 0%, #b70718 100%);
+              background-image: linear-gradient(to bottom, #ed4051 0%, #e02638 100%);
+              background-repeat: repeat-x;
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff127bde', endColorstr='#ff072d50', GradientType=0);
+              border-color: #072d50 #072d50 #0c5497;
+              color: #fff !important;
+              text-shadow: 0 -1px 0 rgba(31, 31, 31, 0.29);
+              -webkit-font-smoothing: antialiased;
+            }
 
         </style>
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -142,9 +154,10 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="{{ url('/home') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+            @if (((session()->exists('email'))) && ((session()->exists('password'))))
             <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
             <li><a href="{{ url('/profil') }}">Profil</a></li>
-            <li><a href="#">About</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
             <li class="visible-xs-block"><a href="#">Careers</a></li>
             <li class="visible-xs-block"><a href="#">Press Release</a></li>
@@ -159,9 +172,15 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-xs">
+            <a type="button" class="navbar-btn btn btn-gradient-red" am-latosans="bold"  href="{{ url('/logout') }}">logout</a>
+          </ul>
+          @else
+          </ul>
+          <ul class="nav navbar-nav navbar-right hidden-xs">
             <a type="button" class="navbar-btn btn btn-gradient-blue" am-latosans="bold"  href="{{ url('/login') }}">Login</a>
             <a type="button" class="navbar-btn btn btn-gradient-blue" am-latosans="bold"  href="{{ url('/register') }}">Register</a>
-          </ul>
+          </ul>            
+          @endif
         </div><!-- /.navbar-collapse -->
       </div>
     </nav>

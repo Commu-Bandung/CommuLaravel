@@ -21,12 +21,18 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        $email = $request->email;
+        $password = $request->password;
+
+        $request->session()->put('email', $email);
+        $request->session()->put('password', $password);
+
         $client = new Client($this->data);
 
-        $response = $client->post('api/auth/login',[
+        $response = $client->post('api/auth/login/anggota',[
             'form_params'   => [
-                'email' => $request->email,
-                'password'  => $request->password
+                'email' => $email,
+                'password'  => $password
             ]
         ]);
 
@@ -52,6 +58,12 @@ class AuthController extends Controller
                     return Redirect::back()->withInput()->with('alert','login email dan password tidak ada');
 
             }
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return view('auth/login');
     }
 
 
