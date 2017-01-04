@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('auth/{provider}', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCallback');
@@ -42,3 +42,5 @@ Route::get('kerjasama', function() {
 Route::get('profil', function() {
     return view('profile');
 });
+
+Route::post('login','AuthController@login');

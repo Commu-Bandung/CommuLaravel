@@ -4,6 +4,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/register.css" rel="stylesheet">
 
+@include('errors/validation')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">

@@ -141,7 +141,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav js-nav-add-active-class">
-            <li><a href="#">Home</a></li>
+            <li><a href="{{ url('/home') }}">Home</a></li>
             <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
             <li><a href="{{ url('/profil') }}">Profil</a></li>
             <li><a href="#">About</a></li>

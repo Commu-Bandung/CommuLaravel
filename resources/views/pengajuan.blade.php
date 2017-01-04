@@ -3,6 +3,8 @@
 @section('title', 'Pengajuan')
 
 @section('content')
+@include('errors/success')
+
     
         {!! Form::open(['url'   =>  '', 'class' =>  'form-horizontal']) !!}
             <div class="form-group">
