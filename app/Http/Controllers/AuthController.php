@@ -40,11 +40,17 @@ class AuthController extends Controller
          try {
                 if(($res->login) == true)
                 {
+                    $id = collect($res->data[0]);
+                    $id = $id->get('id');
+                    $request->session()->put('id_anggota', $id);                    
                     $request->session()->put('email', $email);
                     $request->session()->put('password', $password);
 
                     return redirect()->route('home')
                                     ->with('success','login success');
+
+                    // return view('home')->with(compact('id',$id));
+
                 }
                 else
                 {
@@ -63,7 +69,8 @@ class AuthController extends Controller
     public function logout()
     {
         session()->flush();
-        return view('auth/login');
+        return redirect()->route('home');
+        
     }
 
     public function register(Request $request)
@@ -97,6 +104,9 @@ class AuthController extends Controller
         try {
                 if(($res->created) == true)
                 {
+                    $id = collect($res->data[0]);
+                    $id = $id->get('id');
+                    $request->session()->put('id_anggota', $id);
                     $request->session()->put('email', $email);
                     $request->session()->put('password', $password);
                     
