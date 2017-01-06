@@ -4,6 +4,8 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/register.css" rel="stylesheet">
 
+@include('errors/validation')
+
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -13,7 +15,8 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
@@ -33,7 +36,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
@@ -53,7 +57,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="password" class="col-md-4 control-label">Password</label>
 
                             <div class="col-md-6">
@@ -88,7 +93,8 @@
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('komunitas') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('komunitas') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="name" class="col-md-4 control-label">Komunitas</label>
 
                             <div class="col-md-6">
@@ -108,7 +114,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('kampus') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('kampus') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="name" class="col-md-4 control-label">Kampus</label>
 
                             <div class="col-md-6">
@@ -117,7 +124,7 @@
                                         <i class="fa fa-building">
                                         </i>
                                     </div>
-                                    <input id="name" type="text" class="form-control" name="kampus" value="{{ old('kampus') }}" required autofocus>
+                                    <input id="name" type="text" class="form-control" name="kampus" value="{{ old('kampus') }}" required autofocus> 
 
                                     @if ($errors->has('kampus'))
                                         <span class="help-block">
@@ -128,7 +135,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('alamatKampus') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('alamatKampus') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="name" class="col-md-4 control-label">Alamat Kampus</label>
 
                             <div class="col-md-6">
@@ -148,7 +156,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('deskripsi') ? ' has-error' : '' }}">
+                        {{-- <div class="form-group{{ $errors->has('deskripsi') ? ' has-error' : '' }}"> --}}
+                        <div class="form-group">                        
                             <label for="name" class="col-md-4 control-label">Deskripsi</label>
 
                             <div class="col-md-6">

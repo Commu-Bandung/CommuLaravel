@@ -24,9 +24,6 @@ class AuthController extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $request->session()->put('email', $email);
-        $request->session()->put('password', $password);
-
         $client = new Client($this->data);
 
         $response = $client->post('api/auth/login/anggota',[
@@ -43,6 +40,9 @@ class AuthController extends Controller
          try {
                 if(($res->login) == true)
                 {
+                    $request->session()->put('email', $email);
+                    $request->session()->put('password', $password);
+
                     return redirect()->route('home')
                                     ->with('success','login success');
                 }
@@ -66,5 +66,60 @@ class AuthController extends Controller
         return view('auth/login');
     }
 
+    public function register(Request $request)
+    {
+        $nama           = $request->name; 
+        $email          = $request->email;
+        $password       = $request->password;
+        $komunitas      = $request->komunitas;
+        $kampus         = $request->kampus;
+        $alamatKampus   = $request->alamatKampus;
+        $deskripsi      = $request->deskripsi;
+
+        $client = new Client($this->data);    
+
+        $response = $client->post('api/auth/register',[
+            'form_params'   => [
+                'nama'          => $nama,
+                'email'         => $email,
+                'password'      => $password,
+                'komunitas'     => $komunitas,
+                'kampus'        => $kampus,
+                'alamatKampus'  => $alamatKampus,
+                'deskripsi'     => $deskripsi
+            ]
+        ]);
+
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        try {
+                if(($res->created) == true)
+                {
+                    $request->session()->put('email', $email);
+                    $request->session()->put('password', $password);
+                    
+                    return redirect()->route('home')
+                                    ->with('success','registrasi success');
+                }
+                else
+                {
+                    return Redirect::back()->withInput()->with('alert','registrasi tidak berhasil, email sudah ada yang punya');
+                } 
+            }
+            catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $result =  $response->getBody();
+
+                    return Redirect::back()->withInput()->with('alert','registrasi tidak berhasil');
+
+            }
+
+
+
+    }
+
 
 }
+  

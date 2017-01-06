@@ -45,3 +45,4 @@ Route::get('profil', function() {
 
 Route::post('login','AuthController@login');
 Route::get('logout','AuthController@logout');
+Route::post('register','AuthController@register');

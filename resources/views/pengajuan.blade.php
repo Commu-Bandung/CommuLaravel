@@ -15,7 +15,7 @@
                             <i class="fa fa-file-word-o">
                             </i>
                         </div>
-                        {!! Form::text('proposal','',['class'   => 'form-controll input-sm','placeholder' => 'isi proposal']) !!}
+                        {!! Form::text('proposal','',['class' => 'form-controll input-sm','placeholder' => 'masukan link proposal','required autofocus' =>'required autofocus']) !!}
                     </div>
                 </div>
             </div>
@@ -27,7 +27,7 @@
                             <i class="fa fa-calendar">
                             </i>
                         </div>
-                            {!! Form::text('event','',['class'   => 'form-controll input-sm','placeholder' => 'isi event']) !!}
+                            {!! Form::text('event','',['class'   => 'form-controll input-sm','placeholder' => 'isi event','required autofocus' =>'required autofocus']) !!}
                         </div>
                 </div>
             </div>
@@ -41,14 +41,14 @@
                         </div>
                         {!! Form::select('kategori', ['teknologi' => 'Teknologi','manajemen' => 'Manajemen','language and culture' => 'language and culture',
                                                         'music' => 'Music','fashion & beuty' => 'fashion & beuty', 'lain lain' => 'Lain-lain' ], null,
-                                                     ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori']) !!}
+                                                     ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori','required autofocus' =>'required autofocus']) !!}
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 {!! Form::label('deskripsi','Deskripsi:',['class' => 'col-sm-2 controll-label' ] ) !!}
                 <div class="col-sm-2">
-                {!! Form::textArea('deskripsi','',['class' => 'form-controll input-sm','rows' => '3','placeholder' => 'isi deskripsi' ] ) !!}
+                {!! Form::textArea('deskripsi','',['class' => 'form-controll input-sm','rows' => '3','placeholder' => 'isi deskripsi','required autofocus' =>'required autofocus' ] ) !!}
                 </div>
             </div>
             
