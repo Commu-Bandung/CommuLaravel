@@ -8,9 +8,6 @@
         <title>Laravel</title>
         <link href="{!! asset('css/bootstrap.min.css') !!}" rel="stylesheet">      
 
-        {{-- <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css"> --}}
-        <!-- Styles -->
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         <style type="text/css">
          @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900);
