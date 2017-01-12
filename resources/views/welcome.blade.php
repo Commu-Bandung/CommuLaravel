@@ -151,7 +151,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="{{ url('/home') }}">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="{{ url('/about') }}">About</a></li>
             @if (((session()->exists('email'))) && ((session()->exists('password'))))
             <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
             <li><a href="{{ url('/profil') }}">Profil</a></li>

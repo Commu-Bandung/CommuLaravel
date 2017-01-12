@@ -35,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">CommuId
+                    <a class="navbar-brand" href="{{ url('/home') }}">CommuId
                         {{--{{ config('app.name', 'CommuId') }}--}}
                     </a>
                 </div>
