@@ -188,7 +188,7 @@
 </script>
 
       <div class="container">
-        <h1><mark><em> @yield('title') </em> </mark> </h1>
+        <h2><mark><em> @yield('title') </em> </mark> </h2>
         @yield('content')
       </div>     
 
