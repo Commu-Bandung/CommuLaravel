@@ -43,7 +43,6 @@
                         </div>
                         {!! Form::select('kategori', ['teknologi' => 'teknologi','menejemen' => 'menejemen','language and culture' => 'language and culture',
                                                         'music' => 'music','fashion & beuty' => 'fashion & beuty', 'lain lain' => 'lain lain' ], null,
-                                                        ['multiple' => true],
                                                      ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori','required autofocus' =>'required autofocus']) !!}
                     </div>
                 </div>

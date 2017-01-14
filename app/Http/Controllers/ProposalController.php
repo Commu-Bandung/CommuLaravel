@@ -43,9 +43,9 @@ class ProposalController extends Controller
                     'form_params'   => [
                         'id_anggota' => $id_anggota,
                         'proposal'   => $proposal,
-                        'event'      => $event,
                         'kategori'   => $kategori,
                         'deskripsi'  => $deskripsi,
+                        'event'      => $event,
                     ]
                 ]);
 
