@@ -42,6 +42,10 @@ return [
     */
 
     'disks' => [
+        'proposal' => [
+            'driver' => 'local',
+            'root'   => public_path('proposalupload')
+        ],
 
         'local' => [
             'driver' => 'local',

@@ -4,9 +4,11 @@
 
 @section('content')
 @include('errors/success')
+@include('errors/validation')
 
     
-        {!! Form::open(['url'   =>  '', 'class' =>  'form-horizontal']) !!}
+        {!! Form::open(['url'  => 'ajukan', 'files' => true,'class' =>  'form-horizontal']) !!}
+            {{ csrf_field() }}
             <div class="form-group">
                 {!! Form::label('proposal','Proposal:',['class' => 'col-sm-2 controll-label']) !!}
                 <div class="col-sm-2">
@@ -15,7 +17,7 @@
                             <i class="fa fa-file-word-o">
                             </i>
                         </div>
-                        {!! Form::text('proposal','',['class' => 'form-controll input-sm','placeholder' => 'masukan link proposal','required autofocus' =>'required autofocus']) !!}
+                        {!! Form::file('proposal','',['class' => 'form-controll input-sm','required autofocus' =>'required autofocus']) !!}
                     </div>
                 </div>
             </div>
@@ -39,8 +41,9 @@
                             <i class="fa fa-gear">
                             </i>
                         </div>
-                        {!! Form::select('kategori', ['teknologi' => 'Teknologi','manajemen' => 'Manajemen','language and culture' => 'language and culture',
-                                                        'music' => 'Music','fashion & beuty' => 'fashion & beuty', 'lain lain' => 'Lain-lain' ], null,
+                        {!! Form::select('kategori', ['teknologi' => 'teknologi','menejemen' => 'menejemen','language and culture' => 'language and culture',
+                                                        'music' => 'music','fashion & beuty' => 'fashion & beuty', 'lain lain' => 'lain lain' ], null,
+                                                        ['multiple' => true],
                                                      ['class' => 'form-control input-sm', 'placeholder' => 'pilih kategori','required autofocus' =>'required autofocus']) !!}
                     </div>
                 </div>

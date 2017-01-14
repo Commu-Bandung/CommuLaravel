@@ -28,7 +28,7 @@ Route::get('auth/{provider}/callback', 'Auth\RegisterController@handleProviderCa
 
 Route::get('pengajuan', function() {
     return view('pengajuan');
-});
+})->name('responajuan');
 
 Route::get('view', function() {
     return view('viewreview');
@@ -49,3 +49,5 @@ Route::get('profil', function() {
 Route::post('login','AuthController@login');
 Route::get('logout','AuthController@logout');
 Route::post('register','AuthController@register');
+
+Route::post('ajukan','ProposalController@pengajuan');
