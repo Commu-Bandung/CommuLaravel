@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        if ( (!(session()->exists('email'))) && (!(session()->exists('password'))) ) {
+        if ( (!(session()->exists('email'))) ) {
             return view('auth/login');
         }
     }

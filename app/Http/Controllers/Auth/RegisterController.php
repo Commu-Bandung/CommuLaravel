@@ -3,15 +3,19 @@
 namespace App\Http\Controllers\Auth;
 
 use App\SocialProvier;
-use App\User;
+use Illuminate\Support\Facades\DB;
+use App\anggotas;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+// use Illuminate\Foundation\Auth\RegistersUsers;
 use Socialite;
+use Illuminate\Http\Request;
 
 
 class RegisterController extends Controller
 {
+     
+     
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -23,7 +27,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    // use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -88,7 +92,7 @@ class RegisterController extends Controller
      *
      * @return Response
      */
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback($provider, Request $request)
     {
         try
         {
@@ -102,23 +106,33 @@ class RegisterController extends Controller
         $socialProvider = SocialProvier::where('provider_id',$socialUser->getId())->first();
         if (!$socialProvider)
         {
-            $user = User::firstOrCreate(
+            $user = anggotas::firstOrCreate(
                 ['email'    =>  $socialUser->getEmail()],
                 ['name'    =>  $socialUser->getName()]
             );
 
             $user->socialProviders()->create(
                 ['provider_id'  =>  $socialUser->getId(), 'provider'  => $provider]
-            );
+            );            
         }
-        else
+        else       
 
-            $user = $socialProvider->user;
+            $user = $socialUser->getEmail();
 
-        auth()->login($user);
+             $data = DB::table('anggotas')
+                            ->select('id')
+                            ->where('email', '=',$user)
+                            ->get();
+            $id = collect($data[0]);
+            $id = $id->get('id');
+
+            $request->session()->put('id_anggota', $id);
+            $request->session()->put('email', $user);
+ 
+
+        // auth()->login($user);
 
         return redirect('/home');
-
         // $user->token;
     }
 }

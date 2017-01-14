@@ -152,7 +152,7 @@
           <ul class="nav navbar-nav js-nav-add-active-class">
             <li><a href="{{ url('/home') }}">Home</a></li>
             <li><a href="{{ url('/about') }}">About</a></li>
-            @if (((session()->exists('email'))) && ((session()->exists('password'))))
+            @if (((session()->exists('email'))) )
             <li><a href="{{ url('/pengajuan') }}">Pengajuan</a></li>
             <li><a href="{{ url('/profil') }}">Profil</a></li>
             <li class="visible-xs-block"><a href="#">About Us</a></li>
