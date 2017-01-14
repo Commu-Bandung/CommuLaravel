@@ -107,8 +107,9 @@ class RegisterController extends Controller
         if (!$socialProvider)
         {
             $user = anggotas::firstOrCreate(
-                ['email'    =>  $socialUser->getEmail()],
-                ['name'    =>  $socialUser->getName()]
+                ['email'            =>  $socialUser->getEmail()],
+                ['nama'             =>  $socialUser->getName()],
+                ['remember_token'   =>  bcrypt($socialUser->getEmail())]
             );
 
             $user->socialProviders()->create(
