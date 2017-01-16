@@ -32,9 +32,7 @@ Route::get('pengajuan', function() {
 
 Route::get('view','ProposalController@viewReview');
 
-Route::get('bantuan', function() {
-    return view('bantuan');
-});
+Route::get('bantuan','BantuanController@viewBantuan');
 
 Route::get('kerjasama', function() {
     return view('kerjasama');

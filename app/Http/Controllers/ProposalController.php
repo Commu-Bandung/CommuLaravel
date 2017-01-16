@@ -95,8 +95,6 @@ class ProposalController extends Controller
 
         $pengajuans = json_decode($body);
 
-        // $pengajuans = collect($pengajuans);
-        // print_r($pengajuans);
 
         return view('viewreview')->with(compact('pengajuans'));
     }
