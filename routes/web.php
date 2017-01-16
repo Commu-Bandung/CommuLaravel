@@ -30,9 +30,7 @@ Route::get('pengajuan', function() {
     return view('pengajuan');
 })->name('responajuan');
 
-Route::get('view', function() {
-    return view('viewreview');
-});
+Route::get('view','ProposalController@viewReview');
 
 Route::get('bantuan', function() {
     return view('bantuan');

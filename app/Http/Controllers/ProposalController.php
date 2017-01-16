@@ -82,4 +82,22 @@ class ProposalController extends Controller
 
         
     }
+
+    public function viewReview()
+    {
+        $id =session()->get('id_anggota');
+
+        $client = new Client($this->data);
+
+        $response = $client->get('api/anggota/pengajuanku/'.$id);
+
+        $body = $response->getBody();
+
+        $pengajuans = json_decode($body);
+
+        // $pengajuans = collect($pengajuans);
+        // print_r($pengajuans);
+
+        return view('viewreview')->with(compact('pengajuans'));
+    }
 }
