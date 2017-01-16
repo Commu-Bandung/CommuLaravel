@@ -7,21 +7,28 @@
     <table class="table table-hover">
     @if (count($pengajuans) > 0)
         <tr class="info">
-            {{-- <td>no</td> --}}
+            <td>no</td>
             <td>Proposal</td>
             <td>event</td>         
             <td>kategori</td>          
             <td>status validasi</td>
             <td>status Review</td>
         </tr>
+            @php
+                $no = 1;
+            @endphp
             @foreach ($pengajuans as $pengajuans)
              <tr class="active">
+                <td>{{ $no }}</td>
                 <td>{{ $pengajuans->proposal }}</td>
                 <td>{{ $pengajuans->event }}</td>
                 <td>{{ $pengajuans->kategori }}</td>
                 <td>{{ $pengajuans->status_valid }}</td>
                 <td>{{ $pengajuans->status_rev }}</td>
              </tr>
+             @php
+                $no ++;
+             @endphp
             @endforeach
     @else
         <tr>
