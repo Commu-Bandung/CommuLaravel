@@ -4,6 +4,7 @@
 
 @section('content')
  <table class="table table-hover">
+  @if (count($kerjasamas) > 0)
     <tr class="info">
         <td>no</td>
         <td>perusahaan</td>
@@ -13,9 +14,11 @@
         <td>jumlah</td>                             
         <td>event</td>                
     </tr>
-    <tr class="active">
-            {{-- $no = $kerjasamas->count();
-            @for ($i = 0; $i < $no; $i++)
+    @php
+      $no = 1;
+    @endphp
+          @foreach($kerjasamas as $kerjasamas)
+            <tr class="active">
                 <td>{{ $no }}</td>
                 <td>{{ $kerjasamas->nama }}</td>
                 <td>{{ $kerjasamas->alamat }}</td>
@@ -23,24 +26,17 @@
                 <td>{{ $kerjasamas->produk }}</td>
                 <td>{{ $kerjasamas->jumlah }}</td>
                 <td>{{ $kerjasamas->event }}</td>
-            @endfor --}}
+            </tr>
+         @php
+         $no ++;
+         @endphp
+         @endforeach
 
-                <td>1 </td>
-                <td>astra </td>
-                <td>jalan kopo no 65 </td>
-                <td>astra@mail.com </td>
-                <td>kecap jahe</td>
-                <td>2000</td>
-                <td>seminar IOT </td>
-    </tr>
-    <tr class="active">
-                <td>2 </td>
-                <td>honde </td>
-                <td>jalan india no 65 </td>
-                <td>honde@mail.com </td>
-                <td>ban motor</td>
-                <td>100</td>
-                <td>seminar pajak </td>
+    @else
+      <tr>
+        <td colspan="3">Tidak ada data Kerjasama</td>
+      </tr>
+    @endif 
     </tr>
  </table>
  @endsection

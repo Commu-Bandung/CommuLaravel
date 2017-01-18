@@ -34,9 +34,7 @@ Route::get('view','ProposalController@viewReview');
 
 Route::get('bantuan','BantuanController@viewBantuan');
 
-Route::get('kerjasama', function() {
-    return view('kerjasama');
-});
+Route::get('kerjasama','KerjasamaController@viewKejasama');
 
 Route::get('profil', function() {
     return view('profile');
