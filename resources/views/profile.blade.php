@@ -1,10 +1,60 @@
 @extends('welcome')
 
-@section('title', 'Profile')
+@section('title', '')
 
 @section('content')
 
-
+    <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Profile Saya</h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">                
+                
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                     @foreach($profiles as $profiles)
+                      <tr>
+                        <td>Nama:</td>
+                        <td>{{ $profiles->nama }}</td>
+                      </tr>
+                      <tr>
+                        <td>Komunitas:</td>
+                        <td>{{ $profiles->komunitas }}</td>
+                      </tr>
+                      <tr>
+                        <td>Kampus</td>
+                        <td>{{ $profiles->kampus }}</td>
+                      </tr>
+                   
+                     <tr>
+                        <td>Alamat Kampus</td>
+                        <td>{{ $profiles->alamat }}</td>
+                      </tr>
+                        <tr>
+                        <td>Deskripsi</td>
+                        <td>{{ $profiles->deskripsi }}</td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:{{ $profiles->email }}">{{ $profiles->email }}</a></td>
+                      </tr>
+                    @endforeach
+                    </tbody>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
+                 <div class="panel-footer">
+                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+                        <span class="pull-right">
+                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                        </span>
+                </div>
+            
+          </div>
 
 
 

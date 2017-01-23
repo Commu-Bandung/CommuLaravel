@@ -31,6 +31,7 @@ class profileController extends Controller
 
         $profiles = json_decode($body);
         
-        return view('profile')->with(compact('profiles'));
+        return view('profile')->with(compact('profiles')); 
+        
     }
 }
