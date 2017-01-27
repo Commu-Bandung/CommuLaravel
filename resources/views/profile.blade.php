@@ -3,6 +3,8 @@
 @section('title', '')
 
 @section('content')
+@include('errors/success')
+
 
     <div class="panel panel-info">
             <div class="panel-heading">
@@ -50,7 +52,7 @@
                  <div class="panel-footer">
                         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                         <span class="pull-right">
-                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                            <a href="{{ url('/editprofile') }}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
                         </span>
                 </div>
             

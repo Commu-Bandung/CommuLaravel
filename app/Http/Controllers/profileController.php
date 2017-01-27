@@ -34,4 +34,47 @@ class profileController extends Controller
         return view('profile')->with(compact('profiles')); 
         
     }
+    public function editProfile()
+    {
+        $id = session()->get('id_anggota');
+        
+        $client = new Client($this->data);
+
+        $response = $client->get('api/anggota/profile/'.$id);
+
+        $body = $response->getBody();
+
+        $profiles = json_decode($body);
+        
+        return view('editprofile')->with(compact('profiles'));
+    }
+    public function updateprofile(Request $request)
+    {
+        $id = session()->get('id_anggota');
+
+        $client = new Client($this->data);
+
+        $response = $client->put('api/anggota/update/'.$id, [
+            'form_params'   => [
+                'nama'          => $request->nama,
+                'komunitas'     => $request->komunitas,
+                'kampus'        => $request->kampus,
+                'alamatKampus'  => $request->alamat,
+                'deskripsi'     => $request->deskripsi
+            ]
+        ]);
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        if (isset($res->updated) == true)
+        {
+            return Redirect::to('profil')->with('success', 'User updated successfully!');
+        }
+        else 
+        {
+            return Redirect::back()->withInput()->with('alert', 'User update error');
+        }
+
+    }
 }

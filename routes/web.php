@@ -37,6 +37,8 @@ Route::get('bantuan','BantuanController@viewBantuan');
 Route::get('kerjasama','KerjasamaController@viewKejasama');
 
 Route::get('profil','profileController@showProfile');
+Route::get('editprofile','profileController@editProfile');
+Route::post('uptprofile','profileController@updateprofile');
 
 Route::post('login','AuthController@login');
 Route::get('logout','AuthController@logout');
