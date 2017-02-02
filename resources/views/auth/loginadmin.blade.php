@@ -10,10 +10,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Login Admin</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/logintoadmin') }}">
+                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
@@ -77,17 +77,7 @@
                             </div>
                         </div>
                     </form>
-                    {{-- <div class="text-center center-block">
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/google' }}" class="btn"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/facebook' }}" class="btn"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/twitter' }}" class="btn"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                        </div>
-                    </div> --}}
+                    
                 </div>
             </div>
         </div>

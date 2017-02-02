@@ -7,7 +7,7 @@
 @include('errors/validation')
 
     
-        {!! Form::open(['url'  => 'ajukan', 'files' => true,'class' =>  'form-horizontal']) !!}
+        {!! Form::open(['url'  => 'ajukan', 'method' => 'POST', 'files' => true,'class' =>  'form-horizontal']) !!}
             {{ csrf_field() }}
             <div class="form-group">
                 {!! Form::label('proposal','Proposal:',['class' => 'col-sm-2 controll-label']) !!}

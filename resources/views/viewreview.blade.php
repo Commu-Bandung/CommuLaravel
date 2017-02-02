@@ -20,7 +20,8 @@
             @foreach ($pengajuans as $pengajuans)
              <tr class="">
                 <td>{{ $no }}</td>
-                <td>{{ $pengajuans->proposal }}</td>
+                @php $file = $pengajuans->proposal; @endphp
+                <td><a href="{{ url('/download/'. $file)}}"> {{ $pengajuans->proposal }}.pdf</a></td>
                 <td>{{ $pengajuans->event }}</td>
                 <td>{{ $pengajuans->kategori }}</td>
 
@@ -32,12 +33,12 @@
                 <td><span class="label label-danger"> {{ 'di'. $pengajuans->status_valid }}</span></td>                
                 @endif
                 
-                @if (($pengajuans->status_rev) == 'belum' )
-                <td><span class="label label-warning"> {{ $pengajuans->status_rev }}</span></td>
-                @elseif (($pengajuans->status_rev) == 'terima')
-                <td><span class="label label-success"> {{ $pengajuans->status_rev }}</span></td>                
+                @if (($pengajuans->status) == 'belum' )
+                <td><span class="label label-warning"> {{ $pengajuans->status }}</span></td>
+                @elseif (($pengajuans->status) == 'terima')
+                <td><span class="label label-success"> {{ $pengajuans->status }}</span></td>                
                 @else
-                <td><span class="label label-danger"> {{ 'di'. $pengajuans->status_rev }}</span></td>                
+                <td><span class="label label-danger"> {{ 'di'. $pengajuans->status }}</span></td>                
                 @endif
                 
              </tr>

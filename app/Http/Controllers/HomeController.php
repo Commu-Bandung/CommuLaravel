@@ -12,8 +12,8 @@ class HomeController extends Controller
      * @return void
      */
     public function __construct()
-    {
-        if ( (!(session()->exists('email'))) ) {
+    {            
+        if ( (!(session()->exists('id_anggota'))) ) {
             return view('auth/login');
         }
     }

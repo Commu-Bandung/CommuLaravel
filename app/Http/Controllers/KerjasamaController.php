@@ -34,4 +34,60 @@ class KerjasamaController extends Controller
 
         return view('kerjasama')->with(compact('kerjasamas'));
     }
+    public function buatKerjasama($id, Request $request)
+    {
+        $client = new Client($this->data);
+
+                $response = $client->post('api/perusahaan/buatkerjasama',[
+                    'form_params'   => [
+                        'id_review'          => $id,
+                        'produk'             => $request->produk,
+                        'jumlah'             => $request->jumlah,
+                    ]
+                ]);
+
+                $body = $response->getBody();
+                $kerjasamas = json_decode($body);
+
+                // print_r($kerjasamas);
+
+                 try{
+                    if(($kerjasamas->created) == true)
+                    {
+                        $success = "aksi review berhasil";
+
+                        return redirect()->route('perusahaan')
+                                        ->with(compact('success'));
+
+                    }
+                    else
+                    {
+                        return Redirect::back()->withInput()->with('alert','sudah direspon ');
+                    } 
+
+                }
+                catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $result =  $response->getBody();
+
+                    return Redirect::back()->withInput()->with('alert','sudah direspon');
+
+                }
+
+    }
+
+    public function showKerjasamaByperusahaan()
+    {
+        $id =session()->get('id_perusahaan');
+
+        $client = new Client($this->data);
+
+        $response = $client->get('api/perusahaan/showkerjasama/'.$id);
+
+        $body = $response->getBody();
+
+        $kerjasamas = json_decode($body);
+// print_r($kerjasamas);
+        return view('kerjasamaperusahaan')->with(compact('kerjasamas'));
+    }
 }

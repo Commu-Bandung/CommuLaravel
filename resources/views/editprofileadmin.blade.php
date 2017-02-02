@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('admin')
 
 @section('title', '')
 
@@ -13,8 +13,9 @@
                 <div class="panel-body">
                     <h3 class="text-center">
                         Edit profile</h3>
-                    <form class="form form-signup" role="form" method="POST" action="{{ url('/uptprofile') }}">
+                    <form class="form form-signup" role="form" method="POST" action="{{ url('/uptprofileadmin') }}">
                         {{ csrf_field() }}
+                        {{-- <input name="_method" type="hidden" value="PUT"> --}}
 
                     @foreach($profiles as $profiles)
                     <div class="form-group">
@@ -27,28 +28,14 @@
                     
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon">komunitas</span></span>
-                            <input type="Text" name="komunitas" class="form-control" value="{{ $profiles->komunitas }}" required>
+                            <span class="input-group-addon">Email</span></span>
+                            <input type="Text" name="email" class="form-control" value="{{ $profiles->email }}" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon">kampus</span>
-                            <input type="Text" name="kampus" class="form-control" value="{{ $profiles->kampus }}" required >
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">alamat</span></span>
-                            <textarea name="alamat" class="form-control"  required>{{ $profiles->alamat }}</textarea>
-                        </div>
-                    </div>
-             
-                    <div class="form-group">
-                        <div class="input-group">
-                            <span class="input-group-addon">deskripsi</span></span>
-                            <textarea name="deskripsi" class="form-control" required>{{ $profiles->deskripsi }}</textarea>
+                            <span class="input-group-addon">password</span>
+                            <input type="Text" name="password" class="form-control" value="{{ $profiles->password }}" required >
                         </div>
                     </div>
                     

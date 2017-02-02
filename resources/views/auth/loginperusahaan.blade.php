@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading">Login Perusahaan</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/logintoperusahaan') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
@@ -70,6 +70,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
+                                <a href="{{ url('register/perusahaan') }}" type="button" class="btn btn-primary">register</a>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">
                                     Forgot Your Password?
@@ -77,17 +78,7 @@
                             </div>
                         </div>
                     </form>
-                    {{-- <div class="text-center center-block">
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/google' }}" class="btn"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/facebook' }}" class="btn"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3">
-                            <a href="{{ 'auth/twitter' }}" class="btn"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                        </div>
-                    </div> --}}
+                    
                 </div>
             </div>
         </div>

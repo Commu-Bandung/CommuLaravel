@@ -72,6 +72,16 @@ class AuthController extends Controller
         return redirect()->route('home');
         
     }
+    public function logoutadmin()
+    {
+        session()->flush();
+        return redirect()->route('admin');
+    }
+    public function logoutperusahaan()
+    {
+        session()->flush();
+        return redirect()->route('perusahaan');
+    }
 
     public function register(Request $request)
     {
@@ -100,7 +110,7 @@ class AuthController extends Controller
         $body = $response->getBody();
 
         $res = json_decode($body);
-
+// print_r($res);
         try {
                 if(($res->created) == true)
                 {
@@ -129,6 +139,152 @@ class AuthController extends Controller
 
 
     }
+
+    public function loginadmin(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+
+        $client = new Client($this->data);
+
+        $response = $client->post('api/auth/login/admin', [
+            'form_params'   => [
+                'email' => $email,
+                'password'  => $password
+            ]
+        ]);
+
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        try {
+                if(($res->login) == true)
+                {
+                    $id = collect($res->data[0]);
+                    $id = $id->get('id');
+                    $request->session()->put('id_admin', $id);                    
+                    $request->session()->put('email', $email);
+
+
+                    return redirect()->route('admin')
+                                    ->with('success','login success');
+
+                }
+                else
+                {
+                    return Redirect::back()->withInput()->with('alert','login email atau password salah');
+                } 
+            }
+            catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $result =  $response->getBody();
+
+                    return Redirect::back()->withInput()->with('alert','login email dan password tidak ada');
+
+            }
+
+    }
+
+    public function loginperusahaan(Request $request)
+    {
+        $email = $request->email;
+        $password = $request->password;
+
+        $client = new Client($this->data);
+
+        $response = $client->post('api/auth/login/perusahaan', [
+            'form_params'   => [
+                'email' => $email,
+                'password'  => $password
+            ]
+        ]);
+
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        try {
+                if(($res->login) == true)
+                {
+                    $id = collect($res->data[0]);
+                    $id = $id->get('id');
+                    $request->session()->put('id_perusahaan', $id);                    
+                    $request->session()->put('email', $email);
+
+
+                    return redirect()->route('perusahaan')
+                                    ->with('success','login success');
+
+                }
+                else
+                {
+                    return Redirect::back()->withInput()->with('alert','login email atau password salah');
+                } 
+            }
+            catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $result =  $response->getBody();
+
+                    return Redirect::back()->withInput()->with('alert','login email dan password tidak ada');
+
+            }
+    }
+    public function registeradmin(Request $request)
+    {
+        $nama           = $request->nama; 
+        $email          = $request->email;
+        $password       = $request->password;
+        $alamat         = $request->alamat;
+        $deskripsi      = $request->deskripsi;
+
+        $client = new Client($this->data);    
+
+        $response = $client->post('api/perusahaan/add',[
+            'form_params'   => [
+                'nama'          => $nama,
+                'email'         => $email,
+                'password'      => $password,
+                'alamat'        => $alamat,
+                'deskripsi'     => $deskripsi
+            ]
+        ]);
+
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        // print_r($res);
+
+        try {
+                if(($res->created) == true)
+                {
+                    $id = collect($res->data);
+                    $id = $id->get('id');
+                    $request->session()->put('id_perusahaan', $id);
+                    $request->session()->put('email', $email);
+                    $request->session()->put('password', $password);
+                    
+                    return redirect()->route('perusahaan')
+                                    ->with('success','registrasi success');
+                }
+                else
+                {
+                    return Redirect::back()->withInput()->with('alert','registrasi tidak berhasil, email sudah ada yang punya');
+                } 
+            }
+            catch (GuzzleHttp\Exception\ClientException $e) {
+                $response = $e->getResponse();
+                $result =  $response->getBody();
+
+                    return Redirect::back()->withInput()->with('alert','registrasi tidak berhasil');
+
+            }
+
+
+
+    }
+    
 
 
 }

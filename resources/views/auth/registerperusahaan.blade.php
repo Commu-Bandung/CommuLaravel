@@ -10,9 +10,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register Anggota</div>
+                <div class="panel-heading">Register Perusahaan</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/registerperusahaan') }}">
                         {{ csrf_field() }}
 
                         {{-- <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}"> --}}
@@ -25,11 +25,11 @@
                                         <i class="fa fa-user">
                                         </i>
                                     </div>
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                    <input id="nama" type="text" class="form-control" name="nama" value="{{ old('nama') }}" required autofocus>
 
-                                    @if ($errors->has('name'))
+                                    @if ($errors->has('nama'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('name') }}</strong>
+                                            <strong>{{ $errors->first('nama') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -78,66 +78,11 @@
                             </div>
                         </div>                        
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                        
 
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-lock">
-                                        </i>
-                                    </div>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        {{-- <div class="form-group{{ $errors->has('komunitas') ? ' has-error' : '' }}"> --}}
+                        {{-- <div class="form-group{{ $errors->has('alamat') ? ' has-error' : '' }}"> --}}
                         <div class="form-group">                        
-                            <label for="name" class="col-md-4 control-label">Komunitas</label>
-
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-users">
-                                        </i>
-                                    </div>
-                                    <input id="name" type="text" class="form-control" name="komunitas" value="{{ old('komunitas') }}" required autofocus>
-
-                                    @if ($errors->has('komunitas'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('komunitas') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- <div class="form-group{{ $errors->has('kampus') ? ' has-error' : '' }}"> --}}
-                        <div class="form-group">                        
-                            <label for="name" class="col-md-4 control-label">Kampus</label>
-
-                            <div class="col-md-6">
-                                <div class="input-group">
-                                    <div class="input-group-addon">
-                                        <i class="fa fa-building">
-                                        </i>
-                                    </div>
-                                    <input id="name" type="text" class="form-control" name="kampus" value="{{ old('kampus') }}" required autofocus> 
-
-                                    @if ($errors->has('kampus'))
-                                        <span class="help-block">
-                                            <strong>{{ $errors->first('kampus') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- <div class="form-group{{ $errors->has('alamatKampus') ? ' has-error' : '' }}"> --}}
-                        <div class="form-group">                        
-                            <label for="name" class="col-md-4 control-label">Alamat Kampus</label>
+                            <label for="name" class="col-md-4 control-label">Alamat</label>
 
                             <div class="col-md-6">
                                 <div class="input-group">
@@ -145,11 +90,11 @@
                                         <i class="fa fa-home">
                                         </i>
                                     </div>
-                                    <input id="name" type="text" class="form-control" name="alamatKampus" value="{{ old('alamatKampus') }}" required autofocus>
+                                    <input id="name" type="text" class="form-control" name="alamat" value="{{ old('alamat') }}" required autofocus>
 
-                                    @if ($errors->has('alamatKampus'))
+                                    @if ($errors->has('alamat'))
                                         <span class="help-block">
-                                            <strong>{{ $errors->first('alamatKampus') }}</strong>
+                                            <strong>{{ $errors->first('alamat') }}</strong>
                                         </span>
                                     @endif
                                 </div>
@@ -187,17 +132,6 @@
                                 </button>
                             </div>
                         </div>
-                        {{-- <div class="text-center center-block">
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/google' }}" class="btn"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/facebook' }}" class="btn"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <a href="{{ 'auth/twitter' }}" class="btn"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                            </div>
-                        </div> --}}
                     </form>
                 </div>
             </div>

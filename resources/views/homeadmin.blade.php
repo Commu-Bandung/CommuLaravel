@@ -1,16 +1,16 @@
-@extends('welcome')
+@extends('admin')
 
-@section('title','Anggota')
+@section('title','Admin')
 
 @section('content')
 
 @include('errors/success')
 @php
-$id_anggota =session()->get('id_anggota');
+$id_admin =session()->get('id_admin');
 
 @endphp
-        
-<link href="{!! asset('css/home.css') !!}" rel="stylesheet">      
+
+    <link href="{!! asset('css/home.css') !!}" rel="stylesheet">      
 <script src="{!! asset('js/home.js') !!}"></script>
 
  <div class="row" >
@@ -82,6 +82,5 @@ $id_anggota =session()->get('id_anggota');
     <!-- End Carousel -->
 </div>
         </div>
-    
 
 @stop

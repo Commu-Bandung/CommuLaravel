@@ -1,6 +1,6 @@
-@extends('welcome')
+@extends('perusahaan')
 
-@section('title','Bantuan')
+@section('title','Bantuan (perusahaan)')
 
 @section('content')
 <link rel="stylesheet" type="text/css" media="screen" href="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.css" />
@@ -22,57 +22,62 @@
         var addToAll = false;
         var gallery = true;
         var titlePosition = 'inside';
-        $(addToAll ? 'img' : 'img.bukti').each(function(){
+        $(addToAll ? 'img' : 'img.fancybox').each(function(){
             var $this = $(this);
             var title = $this.attr('title');
             var src = $this.attr('data-big') || $this.attr('src');
-            var a = $('<a href="#" class="bukti"></a>').attr('href', src).attr('title', title);
+            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
             $this.wrap(a);
         });
         if (gallery)
-            $('a.bukti').attr('rel', 'fancyboxgallery');
-        $('a.bukti').fancybox({
+            $('a.fancybox').attr('rel', 'fancyboxgallery');
+        $('a.fancybox').fancybox({
             titlePosition: titlePosition
         });
     });
     $.noConflict();
 </script>
-
-    <table class="table table-hover">
-        @if (count($bantuans) > 0)
-        <tr class="info">
-            <td>no</td>
-            <td>perusahaan</td>
-            <td>alamat</td>
-            <td>email</td>
-            <td>jumlah dana</td>
-            <td>bukti</td>       
-            <td>kategori</td>            
-            <td>event</td>       
-        </tr>
-            @php
-                $no = 1;
-            @endphp
-            @foreach($bantuans as $bantuans)
+ <table class="table table-hover">
+  @if (count($bantuans) > 0)
+    <tr class="info">
+        <td>no</td>
+        <td>nama</td>
+        <td>kampus</td>
+        <td>alamat</td>
+        <td>email</td> 
+        <td>jumlah dana</td>
+        <td>bukti</td>
+        <td>event</td>                
+    </tr>
+    @php
+      $no = 1;
+    @endphp
+          @foreach($bantuans as $bantuans)
             <tr class="active">
                 <td>{{ $no }}</td>
                 <td>{{ $bantuans->nama }} </td>
-                <td>{{ $bantuans->alamat }} </td>
-                <td>{{ $bantuans->email }} </td>
-                <td>{{ $bantuans->jumlah_dana }} </td>
-                <td><img  class="bukti" width="80px" height="80px" src="{{ asset('buktiupload/'.$bantuans->bukti.'.jpg') }}"  data-big="{{ asset('buktiupload/'.$bantuans->bukti.'.jpg') }}"></td>
-                <td>{{ $bantuans->kategori }} </td>
-                <td>{{ $bantuans->event }} </td>                
+                <td>{{ $bantuans->kampus }}</td>
+                <td>{{ $bantuans->alamatKampus }}</td>
+                <td>{{ $bantuans->email }}</td> 
+                <td>{{ $bantuans->jumlah_dana }}</td>
+                <td>
+                
+                    <img  class="fancybox" width="80px" height="80px" src="{{ asset('buktiupload/'.$bantuans->bukti.'.jpg') }}"  data-big="{{ asset('buktiupload/'.$bantuans->bukti.'.jpg') }}">
+                </td>
+                <td>{{ $bantuans->event }}</td>
             </tr>
-                @php
-                    $no ++;
-                @endphp
-            @endforeach
-        @else
-        <tr>
-            <td colspan="3">Tidak ada data bantuan</td>
-        </tr>
-        @endif  
-    </table>
+         @php
+         $no ++;
+         @endphp
+         @endforeach
 
-@stop
+    @else
+      <tr>
+        <td colspan="3">Tidak ada data Kerjasama</td>
+      </tr>
+    @endif 
+    </tr>
+ </table>
+ @endsection
+
+ 

@@ -22,7 +22,7 @@ class profileController extends Controller
     public function showProfile()
     {
         $id = session()->get('id_anggota');
-        
+
         $client = new Client($this->data);
 
         $response = $client->get('api/anggota/profile/'.$id);
@@ -75,6 +75,63 @@ class profileController extends Controller
         {
             return Redirect::back()->withInput()->with('alert', 'User update error');
         }
+
+    }
+
+    public function showprofileAdmin()
+    {
+        $id = session()->get('id_admin');
+        
+        $client = new Client($this->data);
+
+        $response = $client->get('api/admin/profile/'.$id);
+
+        $body = $response->getBody();
+
+        $profiles = json_decode($body);
+        
+        return view('profileadmin')->with(compact('profiles')); 
+    }
+    public function editProfileAdmin()
+    {
+         $id = session()->get('id_admin');
+        
+        $client = new Client($this->data);
+
+        $response = $client->get('api/admin/profile/'.$id);
+
+        $body = $response->getBody();
+
+        $profiles = json_decode($body);
+        
+        return view('editprofileadmin')->with(compact('profiles')); 
+    }
+    public function updateProfileAdmin(Request $request)
+    {
+        $id = session()->get('id_admin');
+
+        $client = new Client($this->data);
+
+        $response = $client->put('api/admin/update/'.$id, [
+            'form_params'   => [
+                'nama'          => $request->nama,
+                'email'         => $request->email,
+                'password'      => $request->password,
+            ]
+        ]);
+        $body = $response->getBody();
+
+        $res = json_decode($body);
+
+        if (isset($res->updated) == true)
+        {
+            return Redirect::to('profiladmin')->with('success', 'User updated successfully!');
+        }
+        else 
+        {
+            return Redirect::back()->withInput()->with('alert', 'User update error');
+        }
+
 
     }
 }
